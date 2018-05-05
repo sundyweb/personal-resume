@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淘宝网-淘！我喜欢</title>
+    <link rel="stylesheet" href="index.css">
+    <script type='text/javascript' src='index.js'></script>
+    <!-- <script type='text/javascript' src='top-nav.js'></script> -->
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 整体父级 -->
+        <div class="top-nav-wrap">
+            <!-- 最上面导航栏 -->
+            <div class="top-nav">
+                <!-- 用来固定宽度 -->
+                <ul class="top-nav-l">
+                    <!-- 导航栏左边ul -->
+                    <li class="top-nav-menu china item">
+                        <span class="china-span">中国大陆</span>
+                        <span class="bgPic xsjPic"></span>
+                    </li>
+                    <li class="top-nav-menu loginAndreg">
+                        <a href="https://login.taobao.com/member/login.jhtml" class="login">亲，请登录</a>
+                        <a href="https://login.taobao.com/member/login.jhtml" class="reg">免费注册</a>
+                    </li>
+                    <li class="top-nav-menu phone">
+                        <a href="https://mpage.taobao.com/hd/download.html">手机逛淘宝</a>
+                    </li>
+                </ul>
+                <ul class="top-nav-r">
+                    <!-- 导航栏右边ul -->
+                    <li class="top-nav-menu myTaobao item">
+                        <a href="#">我的淘宝</a>
+                        <span class="bgPic xsjPic"></span>
+                    </li>
+                    <li class="top-nav-menu shopCar item">
+                        <a href="#">
+                            <span class="bgPic shopCarPic"></span>
+                            <span>购物车</span>
+                        </a>
+                        <span class="bgPic xsjPic"></span>
+                    </li>
+                    <li class="top-nav-menu like item">
+                        <a href="#">
+                            <span class="bgPic likePic"></span>
+                            <span>收藏夹</span>
+                        </a>
+                        <span class="bgPic xsjPic"></span>
+                    </li>
+                    <li class="top-nav-menu goods">
+                        <a href="https://www.taobao.com/tbhome/page/market-list">商品分类</a>
+                    </li>
+                    <li class="top-nav-menu cutOff">
+                        <span>|</span>
+                    </li>
+                    <li class="top-nav-menu seller item">
+                        <a href="#">卖家中心</a>
+                        <span class="bgPic xsjPic"></span>
+                    </li>
+                    <li class="top-nav-menu item">
+                        <a href="#">联系客服</a>
+                        <span class="bgPic xsjPic"></span>
+                    </li>
+                    <li class="top-nav-menu">
+                        <a href="#">
+                            <span class="bgPic webNavPic"></span>
+                            <span>网站导航</span>
+                        </a>
+                        <span class="bgPic xsjPic"></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="top-nav-item">
+                <div class="nav-item-china itemdiv">
+                    <ul>
+                        <li>
+                            <a href="#">全球</a>
+                        </li>
+                        <li>
+                            <a href="#">中国大陆</a>
+                        </li>
+                        <li>
+                            <a href="#">香港</a>
+                        </li>
+                        <li>
+                            <a href="#">台湾</a>
+                        </li>
+                        <li>
+                            <a href="#">澳门</a>
+                        </li>
+                        <li>
+                            <a href="#">韩国</a>
+                        </li>
+                        <li>
+                            <a href="#">马来西亚</a>
+                        </li>
+                        <li>
+                            <a href="#">澳大利亚</a>
+                        </li>
+                        <li>
+                            <a href="#">新加坡</a>
+                        </li>
+                        <li>
+                            <a href="#">新西兰</a>
+                        </li>
+                        <li>
+                            <a href="#">加拿大</a>
+                        </li>
+                        <li>
+                            <a href="#">美国</a>
+                        </li>
+                        <li>
+                            <a href="#">日本</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-item-mytb itemdiv">
+                    <ul>
+                        <li>
+                            <a href="https://login.taobao.com/member/login.jhtml">已买到的东西</a>
+                        </li>
+                        <li>
+                            <a href="https://login.taobao.com/member/login.jhtml">我的足迹</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav-item-shopcar itemdiv">
+                   <p>您购物车里没有任何东西</p>
+                   <a href="https://login.taobao.com/member/login.jhtml">查看我的购物车</a>
+                </div>
+                <div class="nav-item-like itemdiv">
+                    <ul>
+                        <li><a href="https://login.taobao.com/member/login.jhtml">收藏的宝贝</a></li>
+                        <li><a href="https://login.taobao.com/member/login.jhtml">收藏的店铺</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item-seller itemdiv">
+                    <ul>
+                        <li><a href="#">免费开店</a></li>
+                        <li><a href="#">已卖出的宝贝</a></li>
+                        <li><a href="#">出售中的宝贝</a></li>
+                        <li><a href="#">卖家服务市场</a></li>
+                        <li><a href="#">卖家培训中心</a></li>
+                        <li><a href="#">体检中心</a></li>
+                        <li><a href="#">问商友</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item-menu itemdiv">
+                    <ul>
+                        <li><a href="#">消费者客服</a></li>
+                        <li><a href="#">卖家客服</a></li>
+                    </ul>
+                </div>
+            </div>
+            <script>
+                var item = document.getElementsByClassName('item');
+                var itemdiv = document.getElementsByClassName('itemdiv');
+                var itemlen = item.length;
+                for (var i = 0; i < itemlen; i++) {
+                    (function (n) {
+                        item[n].onmouseover = function () {
+                            for (var j = 0; j < itemlen; j++) {
+                                itemdiv[j].style.display = 'none';
+                                itemdiv[n].style.display = 'block';
+                            }
+                        }
+                        itemdiv[n].onmouseover = function () {
+                            itemdiv[n].style.display = 'block';
+                        }
+                        itemdiv[n].onmouseout = function () {
+                            itemdiv[n].style.display = 'none';
+                        }
+                    }(i)) 
+                }
+            </script>
+
+        </div>
+        <div class="search-wrap">
+            <!-- 搜索区 -->
+            <div class="search-con">
+                <div class="logo-box">
+                    <img src="img/tb-logo.png" alt="">
+                </div>
+                <div class="search-box">
+                    <div class="search-bd">
+                        <div class="search-tab">
+                            <ul>
+                                <li class="select">宝贝</li>
+                                <li>天猫</li>
+                                <li>店铺</li>
+                            </ul>
+                        </div>
+                        <div class="search-panel">
+                            <a href="#" class="sousuo"></a>
+                            <form action="">
+                                <div class="btn">
+                                    <button>搜索</button>
+                                </div>
+                                <div class="search-inp-box">
+                                    <div class="search-inp">
+                                        <input type="text" placeholder="收纳箱套装">
+                                    </div>
+                                </div>
+                            </form>
+                            <a href="#" class="camera"></a>
+                        </div>
+                    </div>
+                    <div class="search-ft">
+                        <ul>
+                            <li>
+                                <a href="#">女装</a>
+                                <span></span>
+                            </li>
+                            <li>
+                                <a href="#">春装</a>
+                            </li>
+                            <li class='select'>
+                                <a href="#">运动鞋</a>
+                            </li>
+                            <li>
+                                <a href="#">男士外套</a>
+                            </li>
+                            <li>
+                                <a href="#">墙纸</a>
+                            </li>
+                            <li>
+                                <a href="#">耳机</a>
+                            </li>
+                            <li>
+                                <a href="#">男鞋</a>
+                            </li>
+                            <li>
+                                <a href="#">行车记录仪</a>
+                            </li>
+                            <li>
+                                <a href="#">半身裙</a>
+                            </li>
+                            <li>
+                                <a href="#">短裤</a>
+                            </li>
+                            <li>
+                                <a href="#">连衣裙</a>
+                            </li>
+                        </ul>
+                        <a href="#" class="more">更多></a>
+                    </div>
+                </div>
+                <div class="code-box">
+                    <a href="#" class="p-tb">手机淘宝</a>
+                    <a href="#" class="code"></a>
+                    <a href="#" class="close">X</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="screen-nav-wrap">
+            <!-- 中间部分导航栏 -->
+            <div class="screen-nav-con">
+                <h2>主题市场</h2>
+                <ul>
+                    <li>
+                        <a href="https://www.tmall.com">天猫</a>
+                    </li>
+                    <li>
+                        <a href="https://ju.taobao.com/">聚划算</a>
+                    </li>
+                    <li>
+                        <a href="https://chaoshi.tmall.com">天猫超市</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>|</li>
+                    <li>
+                        <a href="https://qiang.taobao.com">淘抢购</a>
+                    </li>
+                    <li>
+                        <a href="https://3c.tmall.com">电器城</a>
+                    </li>
+                    <li>
+                        <a href="https://sf.taobao.com">司法拍卖</a>
+                    </li>
+                    <li>
+                        <a href="https://q.taobao.com">中国制造</a>
+                    </li>
+                    <li>
+                        <a href="https://www.taobao.com">兴农扶贫</a>
+                    </li>
+                </ul>
+                <ul class="zsy">
+                    <li>|</li>
+                    <li>
+                        <a href="https://www.fliggy.com">飞猪旅行</a>
+                    </li>
+                    <li>
+                        <a href="https://yun.taobao.com">智能生活</a>
+                    </li>
+                    <li>
+                        <a href="https://suning.tmall.com">苏宁易购</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="screen-box-wrap">
+            <!-- 主要展示区 -->
+            <div class="main">
+                <div class="main-inner">
+                    <div class="inner-left">
+                        <ul>
+                            <li class="lili">
+                                <a href="#">女装</a> /
+                                <a href="#">男装</a> /
+                                <a href="#">内衣</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">鞋靴</a> /
+                                <a href="#">箱包</a> /
+                                <a href="#">配件</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">童装玩具</a> /
+                                <a href="#">孕产</a> /
+                                <a href="#">奶粉</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">家电</a> /
+                                <a href="#">数码</a> /
+                                <a href="#">手机</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">美妆</a> /
+                                <a href="#">洗护</a> /
+                                <a href="#">保健品</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">珠宝</a> /
+                                <a href="#">眼镜</a> /
+                                <a href="#">手表</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">运动</a> /
+                                <a href="#">户外</a> /
+                                <a href="#">乐器</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">游戏</a> /
+                                <a href="#">动漫</a> /
+                                <a href="#">影视</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">美食</a> /
+                                <a href="#">生鲜</a> /
+                                <a href="#">零食</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">鲜花</a> /
+                                <a href="#">宠物</a> /
+                                <a href="#">农资</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">房产</a> /
+                                <a href="#">装修</a> /
+                                <a href="#">建材</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">家具</a> /
+                                <a href="#">家饰</a> /
+                                <a href="#">家纺</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">汽车</a> /
+                                <a href="#">二手车</a> /
+                                <a href="#">用品</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">办公</a> /
+                                <a href="#">DIY</a> /
+                                <a href="#">五金电子</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">百货</a> /
+                                <a href="#">餐厨</a> /
+                                <a href="#">家庭保健</a>
+                                <span>></span>
+                            </li>
+                            <li class="lili">
+                                <a href="#">学习</a> /
+                                <a href="#">卡券</a> /
+                                <a href="#">本地服务</a>
+                                <span>></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="inner-con">
+                        <div class="pic-box">
+                            <div id="list" style="left: -520px;">
+                                <a href="#">
+                                    <img src="img/lb5.jpg" alt="1" />
+                                </a>
+                                <a href="#">
+                                    <img src="img/lb1.jpg" alt="1" />
+                                </a>
+                                <a href="#">
+                                    <img src="img/lb2.jpg" alt="2" />
+                                </a>
+                                <a href="#">
+                                    <img src="img/lb3.jpg" alt="3" />
+                                </a>
+                                <a href="#">
+                                    <img src="img/lb4.jpg" alt="4" />
+                                </a>
+                                <a href="#">
+                                    <img src="img/lb5.jpg" alt="5" />
+                                </a>
+                                <a href="#">
+                                    <img src="img/lb1.jpg" alt="5" />
+                                </a>
+                            </div>
+                            <div id="buttons">
+                                <span index="1" class="on"></span>
+                                <span index="2"></span>
+                                <span index="3"></span>
+                                <span index="4"></span>
+                                <span index="5"></span>
+                            </div>
+                            <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+                            <a href="javascript:;" id="next" class="arrow">&gt;</a>
+                        </div>
+                        <div class="inner-mall">
+                            <div class="head">
+                                <span class="tm-pic"></span>
+                                <span class="tm">理想生活上天猫</span>
+                            </div>
+                            <a href="#">
+                                <img src="img/pic3.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="inner-con1">
+                        <a href="#">111</a>
+                    </div>
+                    <div class="inner-con1">222</div>
+                    <div class="inner-con1">333</div>
+                    <div class="inner-con1">444</div>
+                    <div class="inner-con1">555</div>
+                    <div class="inner-con1">666</div>
+                    <div class="inner-con1">777</div>
+                    <div class="inner-con1">888</div>
+                    <div class="inner-con1">999</div>
+                    <div class="inner-con1">1111</div>
+                    <div class="inner-con1">2222</div>
+                    <div class="inner-con1">3333</div>
+                    <div class="inner-con1">4444</div>
+                    <div class="inner-con1">5555</div>
+                    <div class="inner-con1">6666</div>
+                    <div class="inner-con1">7777</div>
+                </div>
+                <script>
+                    var lili = document.getElementsByClassName('lili');
+                    var innercon = document.getElementsByClassName('inner-con');
+                    var innercon1 = document.getElementsByClassName('inner-con1');
+                    var maininner = document.getElementsByClassName('main-inner');
+                    var len = lili.length;
+                    for (var i = 0; i < len - 1; i++) {
+                        (function (n) {
+                            lili[n].onmouseover = function () {
+                                for (var j = 0; j < len - 1; j++) {
+                                    innercon1[j].style.display = 'none';
+                                    innercon[0].style.display = 'none';
+                                    innercon1[n].style.display = 'block';
+                                }
+                            }
+                            innercon1[n].onmouseout = function () {
+                                for (var j = 0; j < len - 1; j++) {
+                                    innercon1[j].style.display = 'none';
+                                    innercon[0].style.display = 'block';
+                                    innercon1[n].style.display = 'none';
+                                }
+                            }
+                            maininner[0].onmouseout = function () {
+                                for (var j = 0; j < len - 1; j++) {
+                                    innercon1[j].style.display = 'none';
+                                    innercon[0].style.display = 'block';
+                                    innercon1[n].style.display = 'none';
+                                }
+                            }
+                        }(i))
+                    }
+                </script>
+                <div class="col-middle">
+                    <a href="#" class="middle-pic1">
+                        <img src="img/pic4_.webp" alt="">
+                    </a>
+                    <div class="middle-pic2">
+                        <h5>今日热卖</h5>
+                        <a href="#">
+                            <img src="img/pic5.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="main-bottom">
+                    <div class="bottom-con">
+                        <div class="logo">
+                            <img src="img/tbtt.png" alt="">
+                            <span>让你的生活更有趣</span>
+                        </div>
+                        <a href="#" class="tbttCon">
+                            <img src="img/tbttpc.png" alt="">
+                            <h4>米家蓝牙温湿度计体验：智能家居枢纽</h4>
+                            <p>IT之家12月21日消息?在11月28日小米举行的首届小米IoT开发者大会（MIDC）上，米家带来了一款蓝牙温湿度计产品，售价69元。IT之家编辑部已经收到了这款新产品，接下来小编为大家带来开箱图赏。米家蓝牙温湿度计售价69元，很明显，带有“米家”名字的产品都可以与小米手机智能互</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-right">
+                <div class="member">
+                    <div class="member-bd">
+                        <div class="tx">
+                            <a href="#">
+                                <img src="img/login.jpg" alt="">
+                            </a>
+                        </div>
+                        <span class="hello">Hi! 你好</span>
+                        <p>
+                            <a href="#" class="icon">
+                                <span class="pic"></span>
+                                <span class="con">淘金币领钱</span>
+                            </a>
+                            <a href="#" class="club">
+                                <span class="pic"></span>
+                                <span class="con">会员俱乐部</span>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="member-ft">
+                        <a href="#" class="login">登录</a>
+                        <a href="#">注册</a>
+                        <a href="#">开店</a>
+                    </div>
+                </div>
+                <div class="message">
+                    <a href="#">
+                        网上举报有害信息
+                        <span></span>
+                    </a>
+                </div>
+                <div class="notice">
+                    <div class="title">
+                        <ul>
+                            <li class="lili">
+                                <a href="#">公告</a>
+                            </li>
+                            <li>
+                                <a href="#">规则</a>
+                            </li>
+                            <li>
+                                <a href="#">论坛</a>
+                            </li>
+                            <li>
+                                <a href="#">安全</a>
+                            </li>
+                            <li>
+                                <a href="#" class="select">公益</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="con">
+                        <ul>
+                            <li>
+                                <a href="#" class="select">九寨沟地震紧急救</a>
+                            </li>
+                            <li>
+                                <a href="#" class="select">公益宝贝卖家准入</a>
+                            </li>
+                            <li>
+                                <a href="#">数百万商家的感谢</a>
+                            </li>
+                            <li>
+                                <a href="#">公益宝贝卖家发票</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="moudle">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="pic1"></span>
+                                <p>充话费</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic2"></span>
+                                <p>旅行</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic3"></span>
+                                <p>车险</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic4"></span>
+                                <p>游戏</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic5"></span>
+                                <p>彩票</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic6"></span>
+                                <p>电影</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic7"></span>
+                                <p>酒店</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic8"></span>
+                                <p>理财</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic9"></span>
+                                <p>找服务</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic10"></span>
+                                <p>演出</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic11"></span>
+                                <p>水电煤</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="pic12"></span>
+                                <p>火车票</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="app">
+                    <h3>阿里App
+                        <a href="#">更多></a>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="img/p1.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/p2.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/p3.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/p4.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/p5.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/p6.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/p7.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/p8.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/p9.webp" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="img/p10.webp" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

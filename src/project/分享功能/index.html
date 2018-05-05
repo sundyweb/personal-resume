@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="sharechat">
+        <div class="wrapper">
+            <a href="javascripe:void(0)" class="share" id="share">点击分享</a>
+            <div class="box" id="shareBox">
+                <div class="shareContent-top">
+                    <span>分享到各大社区</span>
+                    <a href="javascripe:void(0)" id="close"></a>
+                </div>
+                <div class="shareContent">
+                    <ul>
+                        <li title="分享到QQ空间">
+                            <a href="javascript:void(0)" class="share1"></a>
+                            <span></span>
+                        </li>
+                        <li title="分享到新浪微博">
+                            <a href="javascript:void(0)" class="share2"></a>
+                            <span></span>
+                        </li>
+                        <li title="分享到人人网">
+                            <a href="javascript:void(0)" class="share3"></a>
+                            <span></span>
+                        </li>
+                        <li title="分享到朋友圈">
+                            <a href="javascript:void(0)" class="share4"></a>
+                            <span></span>
+                        </li>
+                        <li title="分享到腾讯微博">
+                            <a href="javascript:void(0)" class="share5"></a>
+                            <span></span>
+                        </li>
+                        <li title="分享到github">
+                            <a href="javascript:void(0)" class="share6"></a>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+            <script type="text/javascript">
+                //share部分
+                $('#share').on('click', function () {
+                    $('#shareBox').show();
+                    $('#shade').show();
+                });
+                $('#close').on('click', function () {
+                    $('#shareBox').hide();
+                    $('#shade').hide();
+                });
+            </script>
+</body>
+
+</html>

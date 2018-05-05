@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            position: relative;
+            transform-style: preserve-3d;
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            animation: turn 4s linear reverse infinite;
+        }
+        .wrapper div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 180px;
+            line-height: 200px;
+            opacity: 0.5;
+            text-align: center;
+            color: #fff;
+            font-size: 30px;
+            background: red;
+        }
+        .wrapper .item1{
+            background: red;
+            transform: rotateY(0deg) translate3d(0,0,200px);
+        }
+        .wrapper .item2{
+            background: green;
+            transform: rotateY(60deg) translate3d(0,0,200px);
+        }
+        .wrapper .item3{
+            background: orange;
+            transform: rotateY(120deg) translate3d(0,0,200px);
+        }
+        .wrapper .item4{
+            background: deepskyblue;
+            transform: rotateY(180deg) translate3d(0,0,200px);
+        }
+        .wrapper .item5{
+            background: deeppink;
+            transform: rotateY(240deg) translate3d(0,0,200px);
+        }
+        .wrapper .item6{
+            background: purple;
+            transform: rotateY(300deg) translate3d(0,0,200px);
+        }
+        @keyframes turn{
+            0%{
+                transform: rotateX(-20deg) rotateY(0deg);
+            }
+            100%{
+                transform: rotateX(-20deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+    </div>
+</body>
+
+</html>

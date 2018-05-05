@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>菜单栏鼠标联动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wrapper {
+            position: absolute;
+            bottom: 200px;
+            left: 100px;
+            width: 800px;
+            /* border: 1px solid black; */
+            text-align: center;
+        }
+
+        .wrapper img {
+            width: 70px;
+            height: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <a href="javaScript:void(0)">
+            <img src="./tb1.png" alt="">
+        </a>
+        <a href="javaScript:void(0)">
+            <img src="./tb2.png" alt="">
+        </a>
+        <a href="javaScript:void(0)">
+            <img src="./tb3.png" alt="">
+        </a>
+        <a href="javaScript:void(0)">
+            <img src="./tb4.png" alt="">
+        </a>
+        <a href="javaScript:void(0)">
+            <img src="./tb5.png" alt="">
+        </a>
+        <a href="javaScript:void(0)">
+            <img src="./tb3.png" alt="">
+        </a>
+        <a href="javaScript:void(0)">
+            <img src="./tb1.png" alt="">
+        </a>
+    </div>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).on('mousemove', function (e) {
+            var event = e || window.event;
+            //获取坐标点离图片中心点的距离
+            function getDistance(item) {
+                var item = $(item);
+                var x = parseInt(item.offset().left) + 70 / 2;
+                var y = parseInt(item.offset().top) + 70 / 2;
+                var a = Math.abs(event.clientX - x);
+                //一条直角边
+                var b = Math.abs(event.clientY - y);
+                //另一条直角边
+                return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+                // 得出斜边
+            }
+            for(var i = 0;i<$('img').length;i++){
+                var d = getDistance($('img')[i]);
+                d = Math.min(d,200);
+                //d与200比，d>200,取200，d<200，取d
+                var num = (200 - d)/200 * 70 + 70;
+                $($('img')[i]).css({
+                    'width':num + 'px',
+                    'height':num + 'px'
+                })
+            }
+
+        })
+    </script>
+</body>
+
+</html>

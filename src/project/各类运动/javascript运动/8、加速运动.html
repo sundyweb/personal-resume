@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background: red;
+            position: absolute;
+            left: 0px;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var oDiv = document.getElementsByTagName('div')[0];
+        var timer = null;
+        oDiv.onclick = function () {
+            startMove(this,500);
+        }
+        function startMove(obj,target) {
+            clearInterval(obj.timer);
+            var iSpeed = 0;
+            var a = 3;
+            //v= at
+            obj.timer = setInterval(function () {
+               iSpeed = iSpeed + a;
+               if( Math.abs(target - obj.offsetLeft) < Math.abs(iSpeed) ){
+                    obj.style.left = target + 'px';
+                    clearInterval(timer);                    
+                }else{
+                    obj.style.left = obj.offsetLeft + iSpeed + 'px';
+                    
+                }
+            }, 30)
+        }
+    </script>
+</body>
+
+</html>

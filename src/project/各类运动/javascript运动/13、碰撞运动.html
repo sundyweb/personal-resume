@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+       div{
+           position: absolute;
+           left: 0;
+           top: 0;
+           background: orange;
+           width: 100px;
+           height: 100px;
+       }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var oDiv = document.getElementsByTagName('div')[0];
+        var timer = null;
+        oDiv.onclick = function(){
+            startMove(this);
+        }
+        function startMove(obj){
+            clearInterval(obj.timer);
+            var iSpeedX = 6;
+            var iSpeedY = 8;
+            obj.timer = setInterval(function(){
+                var newLeft = obj.offsetLeft + iSpeedX;
+                var newTop = obj.offsetTop + iSpeedY;
+                //可视化窗口减去元素的宽度
+                if(newTop >=  document.documentElement.clientHeight - obj.offsetHeight){
+                    iSpeedY *= -1;
+                    newTop = document.documentElement.clientHeight - obj.offsetHeight;
+                }
+                if(newTop <= 0){
+                    iSpeedY *= -1;
+                    newTop = 0;
+                }
+                if(newLeft >=  document.documentElement.clientWidth - obj.offsetWidth){
+                    iSpeedX *= -1;
+                    newLeft = document.documentElement.clientWidth - obj.offsetWidth;
+                }
+                if(newLeft <= 0){
+                    iSpeedX *= -1;
+                    newLeft = 0;
+                }
+                obj.style.left = newLeft + 'px';
+                obj.style.top = newTop + 'px';
+            },30)
+        }
+        //把类数组的变成数组
+    //    var oLiArray = Array.prototype.slice.call((document.getElementsByClassName('nav')),0);
+    //    var oBg = document.getElementsByClassName('bg')[0];
+    //    oLiArray.forEach(function(ele,index){
+    //        ele.onmouseenter = function(){
+    //            var newLeft = this.offsetLeft;
+    //            startMove(oBg,newLeft);
+    //        }
+    //    })
+    //     function startMove(obj,target) {
+    //         clearInterval(obj.timer);
+    //         var iSpeed = 20;
+    //         var a;
+    //         // 摩擦系数
+    //         var u = 0.8;
+    //         obj.timer = setInterval(function () {
+    //             a = (target - obj.offsetLeft) / 8;
+    //             iSpeed = iSpeed + a;
+    //             iSpeed = iSpeed * u;
+    //             // 让球停下来
+    //             if (Math.abs(iSpeed) <= 1 && Math.abs(target - obj.offsetLeft) <= 1) {
+    //                 console.log("over");
+    //                 clearInterval(obj.timer);
+    //                 obj.style.left = target + "px";
+    //             } else {
+    //                 obj.style.left = obj.offsetLeft + iSpeed + 'px';
+    //             }
+    //         }, 30)
+    //     }
+    </script>
+</body>
+
+</html>

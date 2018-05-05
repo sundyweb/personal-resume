@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100px;
+            width: 100px;
+            background: red;
+            border-radius: 50%;
+        }
+        span{
+            position: absolute;
+            left: 300px;
+            top: 0;
+            width: 1px;
+            height: 100px;
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <span></span>
+    <script>
+        var oDiv = document.getElementsByTagName('div')[0];
+        var timer = null;
+        oDiv.onclick = function () {
+            startMove(this);
+        }
+        function startMove(obj) {
+            clearInterval(obj.timer);
+            var iSpeed = 20;
+            var a;
+            // 摩擦系数
+            var u = 0.8;
+            obj.timer = setInterval(function () {
+                a = (300 - obj.offsetLeft) / 8;
+                iSpeed = iSpeed + a;
+                iSpeed = iSpeed * u;
+                // 让球停下来
+                if(Math.abs(iSpeed) < 1 && Math.abs(300 - obj.offsetLeft) < 1){
+                    console.log("over");
+                    clearInterval(obj.timer);
+                }else{
+                    obj.style.left = obj.offsetLeft + iSpeed + 'px';
+                } 
+            }, 30)
+        }
+    </script>
+</body>
+
+</html>

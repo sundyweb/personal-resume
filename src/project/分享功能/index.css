@@ -1,0 +1,122 @@
+.sharechat {
+    position: fixed;
+    right: 10px;
+    top: 200px;
+}
+.wrapper .share {
+    text-decoration: none;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+    /* margin: 10px auto;*/
+    font-size: 20px;
+    color: #DC143C;
+    font-weight: bolder;
+    background-color: pink;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.box {
+    height: 150px;
+    width: 380px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: none;
+    z-index: 100;
+}
+
+.shareContent-top {
+    width: 340px;
+    height: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.shareContent-top span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #84c017;
+    text-indent: 0.5em;
+}
+
+.shareContent-top a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url('./share/closeBtn.png') 0px 0px no-repeat;
+    float: right;
+}
+
+.shareContent-top a:hover {
+    background-position: 0px -31px;
+}
+
+.shareContent ul li {
+    position: relative;
+    float: left;
+    list-style: none;
+    width: 50px;
+    height: 50px;
+}
+
+.shareContent ul li a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin-left: 11px;
+    margin-top: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.shareContent ul li:hover a {
+    margin-top: 2px;
+}
+
+.shareContent ul li:hover span {
+    opacity: 0.2;
+}
+
+.shareContent ul li .share1 {
+    background: url('./share/sharePic.png') 0px 0px no-repeat;
+}
+
+.shareContent ul li .share2 {
+    background: url('./share/sharePic.png') -28px 0px no-repeat;
+}
+
+.shareContent ul li .share3 {
+    background: url('./share/sharePic.png') -56px 0px no-repeat;
+}
+
+.shareContent ul li .share4 {
+    background: url('./share/weixin.png') -2px -2px no-repeat;
+}
+
+.shareContent ul li .share5 {
+    background: url('./share/sharePic.png') -112px 0px no-repeat;
+}
+
+.shareContent ul li .share6 {
+    background: url('./share/gitPic.png') 0px 0px no-repeat;
+}
+
+.shareContent ul li span {
+    display: block;
+    width: 40px;
+    height: 10px;
+    background: url(../share/share_shade.png) 0px 0px no-repeat;
+    position: absolute;
+    left: 5px;
+    bottom: 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+.shareContent {
+    height: 120px;
+    width: 360px;
+    padding-top: 20px;
+}

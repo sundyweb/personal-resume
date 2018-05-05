@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+       div{
+           position: absolute;
+           left: 0;
+           top: 0;
+           background: orange;
+           width: 100px;
+           height: 100px;
+       }
+       span{
+           position:absolute;
+           width: 5px;
+           height: 5px;
+           background:red;
+       }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var oDiv = document.getElementsByTagName('div')[0];
+    oDiv.onmousedown =function(e){
+        var event = e || window.event;
+        var disX = e.clientX - this.offsetLeft;
+        var disY = e.clientY - this.offsetTop;
+        var that = this;
+        document.onmousemove = function(e){
+            var newLeft = e.clientX - disX;
+            var newTop = e.clientY - disY;
+            // 创建运动轨迹
+            var oSpan = document.createElement('span');
+            oSpan.style.left  = newLeft + 'px';
+            oSpan.style.top  = newTop + 'px';
+            document.body.appendChild(oSpan);        
+            that.style.left = newLeft + 'px';
+            that.style.top = newTop + 'px';  
+        }
+        document.onmouseup = function(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+        
+    }
+    </script>
+</body>
+
+</html>

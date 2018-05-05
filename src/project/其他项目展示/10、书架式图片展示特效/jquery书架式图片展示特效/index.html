@@ -1,0 +1,162 @@
+<!DOCTYPE HTML> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0, maximum-scale=1.0"> 
+<title>jquery书架式图片展示特效_jquery图片特效插件</title> 
+<link rel="stylesheet" href="css/sti_style.css" type="text/css" media="screen"> 
+<link rel="stylesheet" href="css/mediaelementplayer.css"> 
+ 
+<style> 
+body { margin:0; }
+</style> 
+    
+<script src="js/jquery-1.7.min.js"></script> 
+<script src="js/jquery.touchSwipe.min.js"></script> 
+<script src="js/jquery.versatileTouchSlider.min.js"></script> 
+<script src="js/mediaelement-and-player.min.js"></script> 
+ 
+<script> 
+jQuery(document).ready(function() {
+ 
+	$.versatileTouchSlider('#ex_shelf_full', {
+			slideWidth: 960, // some number. ex: 960 or '100%'
+			slideHeight: 'auto', // some number. ex: 220 or 'auto'
+			showPreviousNext: true,
+			currentSlide: 0,
+			scrollSpeed: 600,
+			autoSlide: false,
+			autoSlideDelay: 3000,
+			showPlayPause: true,
+			showPagination: true,
+			alignPagination: 'left',
+			alignMenu: 'left',
+			swipeDrag: true,
+			sliderType: 'image_shelf', // image_shelf, image_banner, image_text, image_gallery
+			pageStyle: 'numbers', // numbers, bullets, thumbnails
+			orientation: 'horizontal', // horizontal, vertical (if vertical, the "slideHeight" option must be a number, not 'auto')
+			onScrollEvent: function() {},
+			ajaxEvent: function() {}
+		}
+	);
+	
+});
+</script> 
+ 
+</head> 
+	
+<body> 
+ 
+ 
+<div class="sti_container" id="ex_shelf_full" style="margin-top:50px;"> 
+ 
+	<div class="slider_description"><strong>jquery书架式图片展示特效</strong></div> 
+ 
+    <div class="sti_slider"> 
+        <div class="sti_items"> 
+        
+        	<!-- SLIDE GROUP 1 --> 
+        
+            <div class="sti_slide"> 
+            	<div class="sti_shelf_divider"></div> 
+                
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_1_thumb.jpg" alt="" width="110" height="150"> 
+                    <a href="http://www.kaiwo123.com/ad/h1.jpg" class="link video sti_lightbox" data-type="video-vimeo" data-size="700x394" title="Lamborghini Aventador"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_2_thumb.jpg" alt="" width="110" height="150"> 
+                    <a href="http://www.kaiwo123.com/ad/h2.jpg" class="link video sti_lightbox" data-type="video-youtube" data-size="700x420" title="Youtube Video (For The Birds / PIXAR)"></a> 
+                    <a href="#" class="ribbon ribbon_green" title="Ribbon"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_3_thumb.jpg" alt="" width="110" height="150"> 
+                    <a href="http://www.kaiwo123.com/ad/h3.jpg" class="link video sti_lightbox" data-type="video-vimeo" data-size="700x394" title="Vimeo Video"></a> 
+                    <a href="#" class="ribbon ribbon_red" title="Ribbon"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_4_thumb.jpg" alt="" width="110" height="150"> 
+                	<a href="http://www.kaiwo123.com/ad/h4.jpg" class="link audio sti_lightbox"  data-type="audio" data-size="450x50" title="Audio Example. HTML5 Support / Flash Fallback"></a> 
+                    <a href="#" class="ribbon ribbon_green" title="Ribbon"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_5_thumb.jpg" alt="" width="110" height="150"> 
+                    <a href="http://www.kaiwo123.com/ad/h5.jpg" class="link video sti_lightbox" data-type="video" data-size="540x303" title="MP4 Video. HTML5 Support / Flash Fallback"></a> 
+                    <a href="#" class="ribbon ribbon_orange" title="Ribbon"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_1_thumb.jpg" alt="" width="110" height="150"> 
+                    <a href="http://www.kaiwo123.com/ad/h1.jpg" class="link zoom sti_lightbox" data-type="image" title="Lightbox image example"></a> 
+                    <a href="#" class="ribbon ribbon_blue" title="Ribbon"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_2_thumb.jpg" alt="" width="110" height="150"> 
+                	<a href="http://www.kaiwo123.com/ad/v1.jpg" class="link audio sti_lightbox"  data-type="audio" data-size="450x50" title="Audio Example 2. HTML5 Support / Flash Fallback"></a> 
+                </div> 
+                
+                <div class="sti_shelf_divider_bottom"></div> 
+            </div> 
+            
+            <!-- SLIDE GROUP 2 --> 
+ 
+            <div class="sti_slide"> 
+            	<div class="sti_shelf_divider"></div> 
+                
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_1_thumb.jpg" alt="" width="110" height="150"> 
+                    <a href="#" class="link more" title="Title"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_2_thumb.jpg" alt="" width="110" height="150"> 
+                	<a href="content/audio/AirReview-Landmarks-02-ChasingCorporate.mp3" class="link audio sti_lightbox"  data-type="audio" data-size="450x50" title="Audio Example. HTML5 Support / Flash Fallback"></a> 
+                    <a href="#" class="ribbon ribbon_green" title="Ribbon"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_3_thumb.jpg" alt="" width="110" height="150"> 
+                	<a href="#" class="link more" title="Title"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_4_thumb.jpg" alt="" width="110" height="150"> 
+                    <a href="http://vimeo.com/53327926" class="link video sti_lightbox" data-type="video-vimeo" data-size="700x394" title="Vimeo Video"></a> 
+                </div> 
+				<div class="sti_prod"> 
+                	<img src="image/banner_full_5_thumb.jpg" alt="" width="110" height="150"> 
+                    <a href="content/html/html_content.html" class="link content sti_lightbox"  data-type="html-content" data-size="550x450" title="HTML Content"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_1_thumb.jpg" alt="" width="110" height="150"> 
+                    <a href="#" class="link more" title="Title"></a> 
+                    <a href="#" class="ribbon ribbon_red" title="Ribbon"></a> 
+                </div> 
+                <div class="sti_prod"> 
+                	<img src="image/banner_full_2_thumb.jpg" alt="" width="110" height="150"> 
+                    <a href="#" class="link more" title="Title"></a> 
+                </div> 
+                
+                <div class="sti_shelf_divider_bottom"></div> 
+            </div> 
+ 
+            <!-- SLIDE GROUP 3 --> 
+        	
+           
+            
+        </div><!-- sti_items --> 
+    </div><!-- sti_slider --> 
+    
+    <div class="sti_paginate"> 
+    	<div class="sti_page"></div> 
+        
+        <div class="sti_control"> 
+        	<a href="#" class="sti_btn sti_play"><img src="img/play.png" alt=""></a> 
+            <a href="#" class="sti_btn sti_pause"><img src="img/pause.png" alt=""></a> 
+        </div> 
+    </div> 
+ 
+</div><!-- sti_container --> 
+<div>
+<div style="text-align:center;clear:both">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p>
+<p>来源：<a href="http://www.html580.com/" target="_blank">站长素材</a></p>
+</div>
+<div style="display:none;"><iframe src="http://www.html580.com" width="0" height="0"></iframe></div></body> 
+</html>

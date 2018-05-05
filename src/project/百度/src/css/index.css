@@ -1,0 +1,140 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+/*header style*/
+.header{
+	height: 60px;
+	line-height: 60px;
+}
+/*清除浮动流*/
+.header .nav::after{
+	content: '';
+	clear: both;
+	display: block;
+}
+/*li元素右浮动；清除项目符号*/
+.header .nav li{
+	float:right;
+	list-style: none;
+	margin-right: 22px;
+}
+.header .nav li a{
+	color: #333;
+	font-weight: 600;
+	font-size: 13px;
+}
+.header .nav .gray a{
+	font-weight: 100;
+}	
+.header .nav .more{
+	margin-right: 12px;
+}
+.header .nav .more a{
+	font-weight: 400;
+	background-color: #38f;
+	color: #fff;
+	text-decoration: none;
+	padding: 4px;
+}
+.header .nav li a:hover{
+    color: #00c;
+}
+/* search style*/
+.search{
+	margin-top: 30px;
+}
+.search .logo{
+	text-align: center;
+}
+.search .logo img{
+	width: 270px;
+	height: 129px;
+}
+.search .keyWord{
+    margin-top: 20px;
+    text-align: center;
+}
+.search .keyWord form div{
+	display: inline-block;
+}
+.search .keyWord form .inpWrapper input{
+	width: 539px;
+	height: 34px;
+	border:1px solid #999;
+}
+.search .keyWord form .inpWrapper{
+	position: relative;
+}
+/*先把容器相对定位作参照物，再对具体元素绝对定位*/
+.search .keyWord form .inpWrapper span{
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -8px;
+	width:18px;
+	height: 16px;
+	background-image: url('../img/camera.png');
+	background-position: 0px 0px;
+}
+.search .keyWord form .inpWrapper span:hover{
+	background-position: 0px 18px;
+	cursor: pointer;
+}
+.search .keyWord form .inpWrapper{
+	vertical-align: top;
+}
+.search .keyWord form .btnWrapper{
+	margin-left: -5px;
+}
+.search .keyWord .btnWrapper input{
+	width: 100px;
+	height: 36px;
+	background-color: #3385ff;
+	cursor: pointer;
+	color: #fff;
+	font-size: 15px;
+	border:none;
+}
+
+/*info style*/
+.info{
+	margin-top: 180px;
+	text-align: center;	
+}
+.info .weixin.img{
+	width: 60px;
+	height: 60px;
+}
+.info .weixin p{
+	margin-top: 4px;
+	font-size: 12px;
+}
+.info .message{
+	margin-top: 10px;
+}
+.info .message .lineOne a{
+	color:#999;
+	font-size: 12px;
+	margin-right: 15px;
+}
+.info .message .lineTwo a,span{
+	color:#999;
+	font-size: 12px;
+	margin-top: 5px;
+}
+.info .message .lineTwo .icon{
+	display: inline-block;
+	width: 14px;
+	height: 17px;
+	background-image: url('../img/icon.png');
+	vertical-align: bottom;
+}
+
+.info .message .lineTwo .icon1{
+	margin-right: 15px;
+	background-position: -600px -96px;
+}
+.info .message .lineTwo .icon2{
+	background-position: -623px -96px;
+}

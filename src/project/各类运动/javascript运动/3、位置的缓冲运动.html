@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+       .wrapper{
+           position: absolute;
+           left:-400px;
+           top: 0;
+           height: 100px;
+           width: 400px;
+           background: blue;
+       }
+       .wrapper .show{
+           position: absolute;
+           left: 400px;
+           top: 0;
+           height: 100px;
+           width: 30px;
+           background: red;
+       }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="show"></div>
+</div>
+    <script>
+        var oDivwrapper = document.getElementsByClassName('wrapper')[0];
+        var timer = null;
+        oDivwrapper.onmouseenter = function(){
+            startMove(this,0);
+        }
+        oDivwrapper.onmouseleave =function(){
+            startMove(this,-400);
+        }
+        function startMove(ele,target){
+            clearInterval(timer);
+            var iSpeed;
+            timer = setInterval(function(){
+                iSpeed = (target - ele.offsetLeft) / 7;
+                iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+                if( ele.offsetLeft === target){
+                    clearInterval(timer);
+                }else{
+                    ele.style.left = ele.offsetLeft + iSpeed + 'px';
+                }
+            },30)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            height: 390px;
+            width: 320px;
+            margin: 20px auto;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .wrapper .imgCont {
+            width: 100%;
+            height: 320px;
+        }
+
+        .imgCont img {
+            display: none;
+            height: 100%;
+            width: 100%;
+            background-size: 320px 320px;
+        }
+        .imgCont .active {
+            display: block;
+        }
+        .moveBox {
+            position: absolute;
+            cursor: move;
+            background-color: #eee;
+            z-index: 999;
+            opacity: 0.3;
+        }
+        .bigImg {
+            position: absolute;
+            top: 0;
+            left: 105%;
+            height: 320px;
+            width: 320px;
+            border: 1px solid black;
+            display: none;
+            overflow: hidden;
+        }
+        .bigImg img {
+            display: none;
+        }
+        .bigImg .active {
+            display: block;
+        }
+        .item {
+            width: 100%;
+            height: 70px;
+            margin-top: 5px;
+            text-align: center;
+        }
+        .item img {
+            margin-top: 5px;
+            width: 56px;
+            height: 56px;
+        }
+        .item .checked {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="imgCont">
+            <img src='./psb.jpg' alt="" class="active">
+            <img src="./lb1.jpg" alt="">
+            <img src="./lb2.jpg" alt="">
+            <img src="./lb3.jpg" alt="">
+            <img src="./lb4.jpg" alt="">
+            <div class="moveBox"></div>
+        </div>
+        <div class="bigImg">
+            <img src='./psb.jpg' alt="" class="active">
+            <img src='./lb1.jpg' alt="">
+            <img src='./lb2.jpg' alt="">
+            <img src='./lb3.jpg' alt="">
+            <img src='./lb4.jpg' alt="">
+        </div>
+        <div class="item">
+            <img src='./psb.jpg' alt="" class="checked">
+            <img src="./lb1.jpg" alt="">
+            <img src="./lb2.jpg" alt="">
+            <img src="./lb3.jpg" alt="">
+            <img src="./lb4.jpg" alt="">
+        </div>
+    </div>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script>
+        var wrapper = $('.wrapper');
+        var imgCont = $('.imgCont');
+        var moveBox = $('.moveBox');
+        var bigImg = $('.bigImg');
+        var item = $('.item');
+        var itemImg = item.find('img');
+        var imgContImg = imgCont.find('img');
+        var bigImgImg = bigImg.find('img');
+        var w, h;
+
+        itemImg.on('click', function () {
+            $('.active').removeClass('active');
+            var index = $(this).index();
+            $(imgContImg[index]).addClass('active');
+            $(bigImgImg[index]).addClass('active');
+            $('.checked').removeClass('checked');
+            $(itemImg[index]).addClass('checked');
+        })
+        function bindEvent() {
+            imgCont.on('mousemove', function (e) {
+                move(e, 2);
+            }).on('mouseleave', function () {
+                moveBox.hide();
+                bigImg.hide();
+            })
+        }
+        function move(event, mul) {
+            //mul:放大倍数
+            w = 320 / mul;
+            h = 320 / mul;
+            var maxL = 320 - w;
+            var maxT = 320 - h;
+            var minL = 0;
+            var minT = 0;
+            //(x,y)：取moveBox中心点的位置
+            var x = event.clientX - wrapper.offset().left - w / 2;
+            var y = event.clientY - wrapper.offset().top - h / 2;
+            //临界值判断(两重三母运算符)（先判断(x < maxL) ? x : maxL)）
+            var endL = (x > minL) ? (x < maxL) ? x : maxL : minL;
+            var endT = (y > minL) ? (y < maxL) ? y : maxT : minT;
+            moveBox.css({
+                'height': h + 'px',
+                'width': w + 'px',
+                'display': 'block',
+                'left': endL + 'px',
+                'top': endT + 'px'
+            });
+            bigImg.css({
+                'display': 'block',
+            }).find('img').css({
+                'height': mul * 320 + 'px',
+                'width': mul * 320 + 'px',
+                'margin-left': -mul * endL,
+                'margin-top': -mul * endT
+            })
+        }
+        bindEvent();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            background: red;
+            margin-bottom: 20px;
+            opacity: 1;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var oDivArr = document.getElementsByTagName('div');
+        var timer = null;
+        oDivArr[0].onclick = function () {
+            startMove(this, 400, 'width');
+        }
+        oDivArr[1].onclick = function () {
+            startMove(this, 400, 'height');
+        }
+        oDivArr[2].onclick = function () {
+            startMove(this, 50, 'opacity');
+        }
+        oDivArr[3].onclick = function () {
+            startMove(this, 50, 'borderWidth');
+        }
+        function getStyle(elem, prop) {
+            if (window.getComputedStyle) {
+                //ie8及以下不兼容
+                return window.getComputedStyle(elem, null)[prop];
+            } else {
+                //ie独有
+                return elem.currentStyle[prop];//ie
+            }
+        }
+        
+        function startMove(obj, target, attr) {
+            clearInterval(obj.timer);
+            var iSpeed, iCur;
+            obj.timer = setInterval(function () {
+                if( attr == 'opacity'){
+                    iCur  = parseFloat(getStyle(obj,attr)) * 100;
+                }else{
+                    iCur = parseInt(getStyle(obj,attr));
+                }
+                iSpeed = (target - iCur) / 7;
+                iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+                if(iCur === target){
+                    clearInterval(obj.timer);
+                }else{
+                    if(attr == 'opacity'){
+                        obj.style.opacity = (iCur + iSpeed) / 100;
+                    }
+                    obj.style[attr] = iCur + iSpeed +'px';
+                }
+            }, 30)
+        }
+    </script>
+</body>
+
+</html>

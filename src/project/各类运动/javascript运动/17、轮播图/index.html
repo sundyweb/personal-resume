@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- 轮播图可视区 -->
+    <div class="wrapper">
+        <ul class="sliderPage">
+            <li>
+                <img src="dog1.jpg">
+            </li>
+            <li>
+                <img src="dog2.jpg">
+            </li>
+            <li>
+                <img src="dog3.jpg">
+            </li>
+            <li>
+                <img src="dog4.jpg">
+            </li>
+            <li>
+                <img src="dog1.jpg">
+            </li>
+        </ul>
+        <!-- 左右按钮-->
+        <div class="btn leftBtn">&lt;</div>
+        <div class="btn rightBtn">&gt;</div>
+        <!-- 底部索引 -->
+        <div class="sliderIndex">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script src='move.js'></script>
+    <script>
+        var timer = null;
+        // 获取移动对象
+        var sliderPage = document.getElementsByClassName("sliderPage")[0];
+        // 移动距离
+        var moveWidth = sliderPage.children[0].offsetWidth;
+        // 获取图片数量
+        var num = sliderPage.children.length - 1;
+        // 锁，当一个图片放完以后再放另一个图片
+        var lock = true;
+        // 索引
+        var _index = 0;
+        // 左右按钮
+        var leftBtn = document.getElementsByClassName("leftBtn")[0];
+        var rightBtn = document.getElementsByClassName("rightBtn")[0];
+        // 索引按钮
+        var oSpanArray =document.getElementsByClassName('sliderIndex')[0].getElementsByTagName('span');
+        leftBtn.onclick = function () {
+            autoMOve('right->left');
+        }
+        rightBtn.onclick = function () {
+            autoMOve('left->right');
+        }
+        // 底部索引：立即执行函数，绑定每一个点击事件
+        for(var i = 0; i < oSpanArray.length; i ++){
+            (function(myIndex){
+                oSpanArray[i].onclick = function(){
+                    lock = false;
+                    clearTimeout(timer);
+                    // 定义全局index
+                    index = myIndex;
+                    startMove(sliderPage,{left: -index *moveWidth},function(){
+                        lock = true;
+                        timer = setInterval(autoMOve, 1500);
+                        changeIndex(index);
+                    });
+                }
+            })(i)
+        }
+        //dircetion
+        //默认轮播方/点right按钮或者undefined  ‘left —> right’
+        //点击left按钮 ‘right -> left’
+        function autoMOve(direction) {
+            if (lock) {
+                lock = false;
+                clearTimeout(timer);
+                if (!direction || direction == 'left->right') {
+                    // 索引用途
+                    _index ++;  
+                    startMove(sliderPage, { left: sliderPage.offsetLeft - moveWidth }, function () {
+                        if (sliderPage.offsetLeft == -num * moveWidth) {
+                            _index = 0;
+                            sliderPage.style.left = '0px';
+                        }
+                        timer = setInterval(autoMOve, 1500);
+                        lock = true;
+                        // 索引用途
+                        changeIndex(_index);
+                    });
+                } else if (direction == 'right->left') {
+                    if (sliderPage.offsetLeft == 0) {
+                        sliderPage.style.left = -num * moveWidth + "px";
+                        _index = num;
+                    }
+                    _index --;
+                    startMove(sliderPage, { left: sliderPage.offsetLeft + moveWidth }, function () {
+                        timer = setInterval(autoMOve, 1500);
+                        lock = true;
+                        changeIndex(_index);
+                    });
+                }
+            }
+
+        }
+        function changeIndex(_index){
+            for(var i =0; i < oSpanArray.length; i ++){
+                oSpanArray[i].className = '';
+            }
+            oSpanArray[_index].className ='active';
+        }
+        timer = setTimeout(autoMOve, 1500);
+    </script>
+</body>
+
+</html>
