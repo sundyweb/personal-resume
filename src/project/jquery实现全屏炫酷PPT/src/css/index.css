@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.wrapper{
+    position: relative;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+}
+.slider-list{
+    width: 100%;
+    height: 100%;
+}
+.slider{
+    width: 100%;
+    height: 100%;
+    padding: 200px;
+    box-sizing: border-box;
+    /* 怪异模式盒子 */
+}
+.slider-list .slider:nth-child(1){
+    background: url('../img/bg-1.jpg') no-repeat;
+    background-size: cover;
+    /* cover:等比例调；100% 100% 会使图片变形 */
+}
+.slider-list .slider:nth-child(2){
+    background: url('../img/bg-2.jpg') no-repeat;
+    background-size: cover;
+    display: none;
+}
+.slider-list .slider:nth-child(3){
+    background: url('../img/bg-3.jpg') no-repeat;
+    background-size: cover; 
+    display: none;
+}
+.slider-list .slider:nth-child(2) img,
+.slider-list .slider:nth-child(3) img{
+    width: 0%;
+}
+.slider .title{
+    float: left;
+    width: 40%; 
+}
+.slider .image img{
+    float: right;
+    width: 40%;
+    /* border: 1px solid #fff;     */
+}
+.slider-btn{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    /* border: 1px solid #fff; */
+}
+.wrapper:hover .slider-btn span{
+    background-color: rgba(255,255,255,0.7);
+    cursor: pointer;
+}
+.slider-btn span{
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+}
+.slider-btn .left-btn{
+    float: left;
+    margin-left: 100px;
+    background: url('../img/left-btn.png');
+}
+.slider-btn .right-btn{
+    float: right;
+    margin-right: 100px;
+    background: url('../img/right-btn.png');
+}
+.slider-order{
+    position: absolute;
+    bottom: 70px;
+    text-align: center;
+    width: 100%;
+    height:25px;
+}
+.slider-order ul li{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #fff;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.slider-order .active{
+    background-color: red;
+}
