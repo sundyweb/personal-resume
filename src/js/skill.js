@@ -16,7 +16,7 @@ option = {
     yAxis: {
         type: 'category',
         axisLabel: { show: false },
-        data: ['Es6', 'Less', 'GIT', 'Webpack', 'VUE', 'Bootstrap', 'Jquery', 'Javascript', 'CSS', 'HTML']
+        data: ['Es6', 'Less', 'scss', 'git', 'gulp', 'Webpack', 'VUE', 'Bootstrap', 'Jquery', 'Javascript', 'CSS', 'HTML']
     },
     series: [
         {
@@ -30,7 +30,7 @@ option = {
                 }
             },
             data: [
-                78, 78, 75, 75, 70, 75, 75, 80, 85, 80
+                78, 78, 78,75, 75, 75, 75, 75, 75, 80, 85, 80
             ]
         }
     ]
